@@ -1,5 +1,14 @@
-"""! @file led.py
-Doxygen style docstring for the file (change this!)"""
+"""! @file motor_driver.py
+"""
+
+''' 
+   \brief     ME 405 Week 5 Lab 1
+   \details   This program controls a DC motor with PWM control for varying duty cycles. 
+   \author    Emily Mendyke, Jenna Mast
+   \version   1.0
+   \date      2/08/2024
+   \Todo      Add to github
+'''
 
 # ME 405 Week 4 Lab 1
 
@@ -20,8 +29,8 @@ class MotorDriver:
         @param in1pin : MotorDriver's first pin object
         @param in2pin : Motordriver's second pin object
         @param timer : MotorDriver's timer object
-        @param ch1 : location where timer PWM is sent to in1pin
-        @param ch2 : location where timer PWM is sent to in2pin
+        @param ch1 : location where timer PWM is channeled to in1pin
+        @param ch2 : location where timer PWM is channeled to in2pin
         """
         self.en_pin = en_pin
         self.ch1 = timer.channel(1, pyb.Timer.PWM, pin=in1pin)
