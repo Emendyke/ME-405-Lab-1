@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['motordriver_0',['MotorDriver',['../classmotor__driver_1_1_motor_driver.html',1,'motor_driver']]]
+  ['off_0',['Alternatively can use the below code to PC0 on and off.',['../led_8py.html#autotoc_md0',1,'']]],
+  ['on_20and_20off_1',['Alternatively can use the below code to PC0 on and off.',['../led_8py.html#autotoc_md0',1,'']]]
 ];

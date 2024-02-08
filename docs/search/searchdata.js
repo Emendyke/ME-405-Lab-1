@@ -1,10 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "_abclmopstu",
+  0: "_abcmopstu",
   1: "m",
-  2: "l",
-  3: "_s",
-  4: "p"
+  2: "m",
+  3: "_s"
 };
 
 var indexSectionNames =
@@ -12,8 +11,7 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "files",
-  3: "functions",
-  4: "variables"
+  3: "functions"
 };
 
 var indexSectionLabels =
@@ -21,7 +19,6 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Files",
-  3: "Functions",
-  4: "Variables"
+  3: "Functions"
 };
 
