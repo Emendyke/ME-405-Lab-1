@@ -48,27 +48,22 @@ class MotorDriver:
         @param level A signed integer holding the duty
                cycle of the voltage sent to the motor 
         """
-        while signal = True:
-            try:
-                level = int(level)  #signed integer holding duty cycle of the voltage
-                if level==0: # for when level is 0
-                    self.ch1.pulse_width_percent(0)
-                    self.ch2.pulse_width_percent(0)
-                    self.en_pin.low()   #disables motor
-                elif level<0: # movement of motor for when value of level is positive
-                    print (f"Setting duty cycle to {level}")
-                    self.en_pin.high()
-                    self.ch1.pulse_width_percent(level)
-                    self.ch2.pulse_width_percent(0)
-                elif level>0: # movement of motor for when value of level is negative
-                    print (f"Setting duty cycle to {level}")
-                    self.en_pin.high()
-                    self.ch1.pulse_width_percent(0)
-                    self.ch2.pulse_width_percent(level)
-                else:
-                    print("error")
-            except KeyboardInterrupt:
-                print("program has been interrupted")
+        level = int(level)  #signed integer holding duty cycle of the voltage
+        if level==0: # for when level is 0
+            self.ch1.pulse_width_percent(0)
+            self.ch2.pulse_width_percent(0)
+            self.en_pin.low()   #disables motor
+        elif level<0: # movement of motor for when value of level is negative
+            print (f"Setting duty cycle to {level}")
+            self.en_pin.high()
+            self.ch1.pulse_width_percent(abs(level))
+            self.ch2.pulse_width_percent(0)
+        else level>0: # movement of motor for when value of level is positive
+            print (f"Setting duty cycle to {level}")
+            self.en_pin.high()
+            self.ch1.pulse_width_percent(0)
+            self.ch2.pulse_width_percent(abs(level))
+                
         
         
 if __name__ == "__main__"
