@@ -80,7 +80,7 @@ if __name__ == "__main__":
     pinB4 = pyb.Pin(pyb.Pin.board.PB4, pyb.Pin.OUT_PP) 
     pinB5 = pyb.Pin(pyb.Pin.board.PB5, pyb.Pin.OUT_PP)
 
-    #creating timer object channel 3
+    #creating timer3 object
     tim3 = pyb.Timer(3, freq=20000)
 
     moe = MotorDriver(pinA10, pinB4, pinB5, tim3)
