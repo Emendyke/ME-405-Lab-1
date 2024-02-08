@@ -48,27 +48,32 @@ class MotorDriver:
         @param level A signed integer holding the duty
                cycle of the voltage sent to the motor 
         """
+    
+         #   try:
         level = int(level)  #signed integer holding duty cycle of the voltage
         if level==0: # for when level is 0
             self.ch1.pulse_width_percent(0)
             self.ch2.pulse_width_percent(0)
             self.en_pin.low()   #disables motor
-        elif level<0: # movement of motor for when value of level is negative
+        elif level<0: # movement of motor for when value of level is positive
             print (f"Setting duty cycle to {level}")
             self.en_pin.high()
-            self.ch1.pulse_width_percent(abs(level))
+            self.ch1.pulse_width_percent(-level)
             self.ch2.pulse_width_percent(0)
-        else level>0: # movement of motor for when value of level is positive
+        elif level>0: # movement of motor for when value of level is negative
             print (f"Setting duty cycle to {level}")
             self.en_pin.high()
             self.ch1.pulse_width_percent(0)
-            self.ch2.pulse_width_percent(abs(level))
-                
+            self.ch2.pulse_width_percent(level)
+        else:
+            print("error")
+           # except KeyboardInterrupt:
+           #     print("program has been interrupted")
         
         
-if __name__ == "__main__"
+if __name__ == "__main__":
 
-    #Test Motor
+    #Test Motor```
 
     # all pin objects created, for enable, in1pin, and in2pin respectively
     pinA10 = pyb.Pin(pyb.Pin.board.PA10, pyb.Pin.OUT_PP) 
@@ -78,14 +83,20 @@ if __name__ == "__main__"
     #creating timer object channel 3
     tim3 = pyb.Timer(3, freq=20000)
 
-    moe = MotorDrivere(pinA10, pinB4, pinB5, tim3)
+    moe = MotorDriver(pinA10, pinB4, pinB5, tim3)
 
-    moe.set_duty_cycle(50)
+    moe.set_duty_cycle(-50)
+    
+    
+    while True:
+        pass
+        
 
-    time.sleep(5)
+ #   time.sleep(5)
 
-    moe.set_duty_cycle(-42)
+ #   moe.set_duty_cycle(-42)
 
-    time.sleep(5)
+ #   time.sleep(5)
 
-    motor.set_duty_cycle(0)
+ #   motor.set_duty_cycle(0)
+
